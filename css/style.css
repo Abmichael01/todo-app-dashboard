@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: "Poppins";
+}
+
+body {
+  height: 100vh;
+}
+
+.app {
+  display: flex;
+  background: #fff;
+}
+.app .sidebar {
+  width: 300px;
+  background: #3d84ff;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0px 20px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.app .sidebar .menu {
+  margin-bottom: 50px;
+  display: flex;
+  gap: 10px;
+  font-size: 30px;
+  color: #fff;
+  justify-content: flex-end;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 20px;
+}
+.app .sidebar .menu i {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.app .sidebar .side-nav {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+.app .sidebar .side-nav li {
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.app .sidebar .side-nav li a {
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  width: 100%;
+}
+.app .sidebar .side-nav li a i {
+  font-size: 25px;
+}
+.app .sidebar .side-nav li a span {
+  text-wrap: nowrap;
+}
+.app .sidebar .side-nav li:hover {
+  background: rgba(233, 233, 233, 0.262745098);
+}
+.app .sidebar .side-nav .active-nav {
+  background: #fff;
+}
+.app .sidebar .side-nav .active-nav:hover {
+  background: #fff;
+}
+.app .sidebar .side-nav .active-nav a {
+  color: #3d84ff;
+}
+.app .show-sidebar {
+  width: 70px;
+}
+
+.main {
+  padding: 20px;
+  width: 100%;
+  background: rgba(233, 233, 233, 0.7647058824);
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.main-header .page {
+  font-size: 20px;
+  color: #3d84ff;
+  font-weight: 500;
+}
+.main-header .user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.main-header .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+.main-header .user-info p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.main .todos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+.main .todos-header .head-text {
+  font-size: 25px;
+  font-weight: 600;
+  color: #3d84ff;
+}
+.main .todos-header .search-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid rgba(233, 233, 233, 0.9843137255);
+  border-radius: 10px;
+  width: 600px;
+}
+.main .todos-header .search-box i {
+  font-size: 20px;
+  color: #333;
+}
+.main .todos-header .search-box input {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  width: 100%;
+}
+.main .todos-header .search-box input:focus .search-box {
+  border-color: #3d84ff;
+}
+.main .todos-header button {
+  padding: 8px 30px;
+  font-size: 20px;
+  color: #fff;
+  background: #07c384;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.main .todos .todos-cont {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 30px;
+  margin-top: 20px;
+}
+.main .todos .todos-cont .todo {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.main .todos .todos-cont .todo .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.main .todos .todos-cont .todo .actions i {
+  font-size: 30px;
+  color: #3d84ff;
+}
+.main .todos .todos-cont .todo .actions div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main .todos .todos-cont .todo .actions div i {
+  padding: 10px;
+  border: 1px solid #3d84ff;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.main .todos .todos-cont .todo .actions div i:nth-child(1) {
+  color: #07c384;
+  border-color: #07c384;
+}
+.main .todos .todos-cont .todo .actions div i:nth-child(2) {
+  color: #ff401f;
+  border-color: #ff401f;
+}
+.main .todos .todos-cont .todo p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+}
+.main .todos .todos-cont .todo .done {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.main .todos .todos-cont .todo .done input {
+  display: none;
+}
+.main .todos .todos-cont .todo .done input:checked + label {
+  background: #07c384;
+}
+.main .todos .todos-cont .todo .done label {
+  background: #d2d2d2;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .todos .todos-cont .todo .done label i {
+  color: #fff;
+  font-size: 25px;
+  border-radius: 50%;
+}

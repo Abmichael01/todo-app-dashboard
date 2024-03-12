@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+$primary-color: #3d84ff;
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: "Poppins";
+}
+
+body{
+    height: 100vh;
+}
+
+.app{
+    display: flex;
+    background: #fff;
+
+    .sidebar{
+        width: 300px;
+        background: $primary-color;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0px 20px;
+        overflow: hidden;
+        transition: .5s ease-in-out;
+        
+        
+
+        .menu{
+            margin-bottom: 50px;
+            display: flex;
+            gap: 10px;
+            font-size: 30px;
+            color: #fff;
+            justify-content: flex-end;
+            height: fit-content;
+            margin-top: 20px;
+
+            i{
+                cursor: pointer;
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
+
+            // i:hover{
+            //     background: #ffffff77;
+            // }
+        }
+
+        
+
+        
+
+        .side-nav{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+
+            li{
+                padding: 15px 20px;
+                // background: #f0f0f0;
+                border-radius: 10px;
+                transition: .2s;
+
+                a{
+                    font-size: 20px;
+                    color: #fff;
+                    display: flex;
+                    gap: 25px;
+                    align-items: center;
+                    
+                    width: 100%;
+                    
+                    i{
+                        font-size: 25px;
+                    }
+                    span{
+                        
+                        text-wrap: nowrap;
+                    }
+                }
+            }
+
+            li:hover{
+                background: #e9e9e943;
+            }
+
+            .active-nav{
+                background: #fff;
+            }
+
+            .active-nav:hover{
+                background: #fff;
+            }
+
+            .active-nav a{
+                color: $primary-color;
+            }
+            
+        }
+    }
+
+    .show-sidebar{
+        width: 70px;
+    }
+
+
+}
+
+.main{
+    padding: 20px;
+    width: 100%;
+    background: #e9e9e9c3;
+
+    &-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        background: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+
+        .page{
+            font-size: 20px;
+            color: $primary-color;
+            font-weight: 500;
+        }
+
+        .user-info{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: top;
+            }
+
+            p{
+                font-size: 18px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .todos{
+
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #fff;
+
+            .head-text{
+                font-size: 25px;
+                font-weight: 600;
+                color: $primary-color;
+            }
+
+            .search-box{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 10px 20px;
+                border: 2px solid #e9e9e9fb;
+                border-radius: 10px;
+                width: 600px;
+
+                i{
+                    font-size: 20px;
+                    color: #333;
+                }
+
+                input{
+                    border: none;
+                    background: transparent;
+                    font-size: 18px;
+                    outline: none;
+                    width: 100%;
+                }
+
+            }
+            .search-box input:focus .search-box{
+                border-color: $primary-color;
+            }
+
+            button{
+                padding: 8px 30px;
+                font-size: 20px;
+                color: #fff;
+                background: #07c384;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        .todos-cont{
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 30px;
+            margin-top: 20px;
+
+
+            .todo{
+                background: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                // width: 200px;
+                .actions{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    i{
+                        font-size: 30px;
+                        color: $primary-color;
+                    }
+
+                    div{
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                       
+
+                        i{
+                            padding: 10px;
+                            border: 1px solid #3d84ff;
+                            border-radius: 50px;
+                            font-size: 16px;
+                            cursor: pointer;
+                        }
+
+                        i:nth-child(1){
+                            color: #07c384;
+                            border-color: #07c384;
+                        }
+                        i:nth-child(2){
+                            color: #ff401f;
+                            border-color: #ff401f;
+                        }
+
+
+                    }
+                }
+
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #333;
+                    
+                }
+
+                .done{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+
+                    input{
+                        display: none;
+                    }
+
+                    input:checked + label{
+                        background: #07c384;
+                        
+                    }
+
+                    label{
+                        background: #d2d2d2;
+                        clip-path: circle();
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        i{
+                            color: #fff;
+                            font-size: 25px;
+                            border-radius: 50%;
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
